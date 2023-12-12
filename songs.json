@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "music/De Sluwe Vos - Beefheart Girl Where Are You.mp3",
+        "genre": "Electro",
+        "img": "imgs/De Sluwe Vos.jpg"
+    },
+    {
+        "id": 2,
+        "title": "music/Paul Hardcastle - Rain Forest.mp3",
+        "genre": "Electro",
+        "img": "imgs/Rain-Forest.jpg"
+    },
+    {
+        "id": 3,
+        "title": "music/Sweely - Beauty Is Random.mp3",
+        "genre": "House",
+        "img": "imgs/sweely.jpg"
+    }
+]
