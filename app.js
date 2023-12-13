@@ -89,9 +89,9 @@ function showAudioTrax(music){
         const audioElement = document.createElement('div');
         audioElement.classList.add('audio-trak');
         if(music[i][0]){
-            audioElement.innerText = music[i][0].src.replace('http://127.0.0.1:5500/music/', '').replace(/%|20|.mp3/g, ' ');
+            audioElement.innerText = music[i][0].src.replace('http://127.0.0.1:5500/music/', '').replace('https://firstdayatwork.github.io/Audio-Player-Test/music/', '').replace(/%|20|.mp3/g, ' ');
         } else {
-            audioElement.innerText = music[i].src.replace('http://127.0.0.1:5500/music/', '').replace(/%|20|.mp3/g, ' ');
+            audioElement.innerText = music[i].src.replace('http://127.0.0.1:5500/music/', '').replace('https://firstdayatwork.github.io/Audio-Player-Test/music/', '').replace(/%|20|.mp3/g, ' ');
         }
         
         audioPlace.appendChild(audioElement);
