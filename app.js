@@ -77,9 +77,10 @@ async function audioPlayer(){
     let musiqe = await getDataFromJson();
     const musicarr = musiqe.flat().filter((el, indx) => indx % 2 == 0);
     const imgarr = musiqe.flat().filter((el, indx) => indx % 2 != 0);
+
         showAudioTrax(musicarr);
         traxAction(musicarr, imgarr);
-    
+        
 }
 
 
@@ -104,6 +105,46 @@ function traxAction(musicarr, imgarr){
     const tracks = document.querySelectorAll('.audio-trak');
     const listOfItems = [...tracks];
     let arr = [];
+
+    musicarr.forEach(song => {
+        song.addEventListener('ended', () => {
+            if(musicarr.indexOf(song) === musicarr.length){
+                song.currentTime = 0;
+                musicarr[0].play();
+                console.log('its 4')
+            }
+            musicarr[musicarr.indexOf(song) + 1].currentTime = 0;
+            musicarr[musicarr.indexOf(song) + 1].play();
+            console.log('0 1 or 3')
+        })
+    })
+
+    startPlayerButton.addEventListener('click', () =>{
+        // console.log(musicarr.some(song => song.ended))
+        if(musicarr.every(song => song.currentTime === 0 && song.paused)){
+            trackName.innerText = tracks[0].innerText;
+            trakImg.src = `${imgarr[listOfItems.findIndex(el => el === tracks[0])]}`;
+            musicarr[0].play()
+        } else {
+            musicarr.some(song => song.paused && song.currentTime > 0 ? song.play() : '')
+            console.log('lag')
+        }
+        
+    
+        if(startPlayerButton.classList.contains('playIt')){
+            startPlayerButton.classList.remove('playIt');
+            startPlayerButton.classList.add('stopIt');
+            startPlayerButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+            
+        } else if(startPlayerButton.classList.contains('stopIt')){
+            startPlayerButton.classList.remove('stopItIt');
+            startPlayerButton.classList.add('playIt');
+            startPlayerButton.innerHTML = `<i class="fa-solid fa-play"></i>`;
+            musicarr.some(song => !song.paused ? song.pause() : '')
+        } 
+    })
+
+    
 
 
     tracks.forEach(elem => {

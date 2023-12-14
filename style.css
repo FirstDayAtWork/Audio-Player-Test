@@ -11,6 +11,7 @@ body{
     align-items: center;
     flex-direction: column;
     height: 100vh; */
+    /* border: 1px solid black; */
     margin: 10px;
 }
 
@@ -34,18 +35,18 @@ body{
 .btn-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 12px;
+    gap: 3px;
     margin: 15px 0;
 }
 
 .panel-buttons{
     border: none;
     /* border: 2px solid #c0c0c0; */
-    padding: 10px 20px;
+    padding: 15px 25px;
     background-color: #ececec;
-    color: #2c2c2c;
+    color: #1c1c1c;
     border-radius: 15px;
     font-size: 20px;
     font-weight: 600;
@@ -64,34 +65,44 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 33px;
-    padding: 10px 20px;
+    padding: 17px 27px;
 }
 
 #swap-btn:active{
     background-color: rgb(49, 112, 228);
 }
 
+
+.audio-time{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 19px;
+}
+
+
 #track-time-slider {
     appearance: none;
     min-width: 230px;
-    margin-bottom: 10px;
-    height: 5px;
-    background-color: rgb(163, 163, 163);
+    height: 10px;
+    border-radius: 15px;
+    background-color: #ececec;
+  }
+
+  #track-time-slider:active {
+    background-color: #dadada;
   }
 
   #track-time-slider::-webkit-slider-thumb {
-    appearance: none;
-    max-width: 4px;
-    height: 23px;
-    background: black;
+    -webkit-appearance: none;
+    max-width: 15px;
+    height: 40px;
+    background: #1c1c1c;
+    border-radius: 12px;
     cursor: pointer;
   }
   
-.audio-time{
-    display: flex;
-    gap: 15px;
-    margin: 10px 0;
-}
 
 .music-container{
     display: flex;
